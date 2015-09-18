@@ -5,20 +5,17 @@ module.exports = function(grunt)
 
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-string-replace');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-html-validation');
 
-	grint.initConfig({
+	grunt.initConfig({
 
-		pkg: grunt.file.readJSON('package.json');
+		pkg: grunt.file.readJSON('package.json'),
 
 		sass:{
 			dist: {
 				files: {
-					'style/board.css' : 'sass/style.css'
+					'build/style/board.css' : 'sass/board.scss'
 				}
 			}
 		}
@@ -27,6 +24,10 @@ module.exports = function(grunt)
 
 	grunt.registerTask('build', [
 		'sass'
+	]);
+
+	grunt.registerTask('default', [
+		'build'
 	]);
 
 }
