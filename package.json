@@ -1,0 +1,26 @@
+{
+  "name": "html5-sudoku",
+  "version": "0.0.1",
+  "description": "An HTML5 sudoku game.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordanribera/html5-sudoku.git"
+  },
+  "author": "",
+  "devDependencies": {
+    "angular": "^1.4.5",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jade": "^0.13.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-html-validation": "^0.1.18"
+  },
+  "dependencies": {
+    "angular": "^1.4.5"
+  }
+}
