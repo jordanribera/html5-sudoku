@@ -5,6 +5,7 @@ module.exports = function(grunt)
 
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-html-validation');
 
@@ -12,18 +13,36 @@ module.exports = function(grunt)
 
 		pkg: grunt.file.readJSON('package.json'),
 
-		sass:{
+		sass: {
 			dist: {
 				files: {
-					'build/style/board.css' : 'sass/board.scss'
+					'build/style/board.css' : 'app/sass/board.scss'
 				}
+			}
+		},
+
+		jade: {
+			compile: {
+				options: {
+					client: false,
+					pretty: true,
+					doctype: 'html'
+				},
+				files: [{
+					expand: true,
+					cwd: 'app/jade/',
+					src: ['**/*.jade'],
+					dest: 'build/',
+					ext: '.html'
+				}]
 			}
 		}
 
 	});
 
 	grunt.registerTask('build', [
-		'sass'
+		'sass',
+		'jade'
 	]);
 
 	grunt.registerTask('default', [
