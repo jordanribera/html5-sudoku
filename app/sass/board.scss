@@ -1,18 +1,41 @@
 //sass goes here
 
-$body-background: #808080;
-$tile-background: #f0f0f0;
+$board-side: 640px;
 
-body
+.board
 {
 	
-	background: $body-background;
+	border-collapse: collapse;
 
-}
+	height: $board-side;
+	width: $board-side;
 
-.tile
-{
-	
-	background: $tile-background;
+	tbody
+	{	}
+
+	colgroup, tbody
+	{
+
+		border: solid medium;
+
+	}
+
+	.row
+	{
+
+
+		.tile
+		{
+
+			height: $board-side / 9;
+			width: $board-side / 9;
+
+			background: #f0f0f0;
+			border: solid thin;
+			text-align: center;
+
+		}
+
+	}
 
 }
