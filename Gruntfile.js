@@ -36,6 +36,20 @@ module.exports = function(grunt)
 					ext: '.html'
 				}]
 			}
+		},
+
+		watch: {
+			options: {
+				spawn: false
+			},
+			jade: {
+				files: ['**/*.jade'],
+				tasks: ['jade']
+			},
+			sass: {
+				files: ['app/sass/**/*'],
+				tasks: ['sass']
+			}
 		}
 
 	});
@@ -46,7 +60,8 @@ module.exports = function(grunt)
 	]);
 
 	grunt.registerTask('default', [
-		'build'
+		'build',
+		'watch'
 	]);
 
 }
