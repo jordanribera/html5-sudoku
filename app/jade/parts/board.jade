@@ -1,4 +1,4 @@
-table.board
+table.board(ng-controller='BoardController as board')
 	colgroup
 		col
 		col
@@ -17,7 +17,7 @@ table.board
 		tr.row(id='row-' + ++row)
 			- var tile = 0
 			while tile < 9
-				td.tile(id='tile-' + row + '.' + ++tile)= row + '.' + tile
+				td.tile(id='tile-' + row + '.' + ++tile ng-bind='board[row][tile]')
 		tr.row(id='row-' + ++row)
 			- var tile = 0
 			while tile < 9

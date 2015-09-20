@@ -1,8 +1,9 @@
 doctype html
-html
+html(ng-app='sudokuApp')
 	head
 		title Sudoku
-		link(href='style/board.css' rel='stylesheet')
+		link(href='style/style.css' rel='stylesheet')
+		script(type='text/javascript')
 
 	body
 		include ./parts/board.jade
